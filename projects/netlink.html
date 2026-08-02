@@ -1,0 +1,1201 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Netlink | Social Platform Case Study</title>
+
+    <meta
+      name="description"
+      content="Netlink is a modern social platform built with Vue 3, TypeScript, Express.js, Prisma ORM, and PostgreSQL. Explore the project architecture, UI, and engineering decisions."
+    />
+
+    <meta name="theme-color" content="#006145" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      href="../assets/projects/netlink/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="../assets/projects/netlink/favicon.svg"
+    />
+    <link rel="shortcut icon" href="../assets/projects/netlink/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../assets/projects/netlink/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="../assets/projects/netlink/site.webmanifest" />
+
+    <meta property="og:type" content="website" />
+
+    <meta property="og:title" content="Netlink | Social Platform" />
+
+    <meta
+      property="og:description"
+      content="Explore the architecture, design system, documentation, and implementation of Netlink."
+    />
+
+    <meta
+      property="og:image"
+      content="https://kevinvondumke.com/assets/projects/netlink/netlink-og-image.png"
+    />
+
+    <meta
+      property="og:url"
+      content="https://kevinvondumke.com/projects/netlink.html"
+    />
+
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <meta name="twitter:title" content="Netlink | Social Platform" />
+
+    <meta
+      name="twitter:description"
+      content="A full-stack social platform built with Vue, Express, Prisma, and PostgreSQL."
+    />
+
+    <meta
+      name="twitter:image"
+      content="https://kevinvondumke.com/assets/projects/netlink/netlink-preview.png"
+    />
+
+    <!-- Google Fonts CDN -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="../css/project.css" />
+    <link rel="stylesheet" href="../css/index.css" />
+  </head>
+  <body>
+    <!-- PROGRESS BAR -->
+    <div class="progress-bar"></div>
+
+    <!-- APP SCREEN -->
+    <div class="app-screen"></div>
+
+    <!-- LANDMARK HEADER NAVIGATION -->
+    <header class="header" id="header">
+      <div class="container nav-container">
+        <!-- Logo / Back to Portfolio -->
+        <a href="../index.html" aria-label="Logo" class="logo">
+          <span class="logo-accent">&lt;/&gt;</span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="nav" id="nav">
+          <ul class="nav-list">
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#system" class="nav-link">System</a></li>
+            <li><a href="#ux" class="nav-link">UX Study</a></li>
+            <li><a href="#gallery" class="nav-link">Gallery</a></li>
+            <li><a href="#resources" class="nav-link">Resources</a></li>
+          </ul>
+          <div class="header-actions">
+            <button
+              class="theme-toggle"
+              id="theme-toggle"
+              type="button"
+              aria-label="Toggle theme"
+              aria-pressed="false"
+            >
+              <span class="theme-icon sun-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                  viewBox="0 0 256 256"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path
+                    d="M120,40V16a8,8,0,0,1,16,0V40a8,8,0,0,1-16,0Zm72,88a64,64,0,1,1-64-64A64.07,64.07,0,0,1,192,128Zm-16,0a48,48,0,1,0-48,48A48.05,48.05,0,0,0,176,128ZM58.34,69.66A8,8,0,0,0,69.66,58.34l-16-16A8,8,0,0,0,42.34,53.66Zm0,116.68-16,16a8,8,0,0,0,11.32,11.32l16-16a8,8,0,0,0-11.32-11.32ZM192,72a8,8,0,0,0,5.66-2.34l16-16a8,8,0,0,0-11.32-11.32l-16,16A8,8,0,0,0,192,72Zm5.66,114.34a8,8,0,0,0-11.32,11.32l16,16a8,8,0,0,0,11.32-11.32ZM48,128a8,8,0,0,0-8-8H16a8,8,0,0,0,0,16H40A8,8,0,0,0,48,128Zm80,80a8,8,0,0,0-8,8v24a8,8,0,0,0,16,0V216A8,8,0,0,0,128,208Zm112-88H216a8,8,0,0,0,0,16h24a8,8,0,0,0,0-16Z"
+                  ></path>
+                </svg>
+              </span>
+              <span class="theme-icon moon-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                  viewBox="0 0 256 256"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path
+                    d="M233.54,142.23a8,8,0,0,0-8-2,88.08,88.08,0,0,1-109.8-109.8,8,8,0,0,0-10-10,104.84,104.84,0,0,0-52.91,37A104,104,0,0,0,136,224a103.09,103.09,0,0,0,62.52-20.88,104.84,104.84,0,0,0,37-52.91A8,8,0,0,0,233.54,142.23ZM188.9,190.34A88,88,0,0,1,65.66,67.11a89,89,0,0,1,31.4-26A106,106,0,0,0,96,56,104.11,104.11,0,0,0,200,160a106,106,0,0,0,14.92-1.06A89,89,0,0,1,188.9,190.34Z"
+                  ></path>
+                </svg>
+              </span>
+            </button>
+
+            <a
+              href="../index.html"
+              class="portfolio-btn"
+              aria-label="Back to Portfolio Home"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                fill="currentColor"
+                viewBox="0 0 256 256"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path
+                  d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"
+                ></path>
+              </svg>
+              Portfolio
+            </a>
+          </div>
+        </nav>
+
+        <!-- Mobile Toggle -->
+        <button
+          class="menu-toggle"
+          id="menu-toggle"
+          aria-label="Toggle navigation"
+          aria-controls="nav"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section class="project-hero">
+        <img
+          src="../assets/projects/netlink-logo-clr.png"
+          alt="Netlink Logo"
+          class="project-logo"
+        />
+        <h1 class="project-title">Netlink — Social Platform</h1>
+        <p class="project-subtitle">
+          Netlink is a full stack social platform engineered for speed, clarity,
+          and robust user safety features.
+        </p>
+      </section>
+
+      <!-- META DATA -->
+      <section class="project-meta">
+        <div class="meta-item">
+          <span class="meta-value">Role</span>
+          <h3 class="meta-label">Full Stack Developer</h3>
+        </div>
+
+        <div class="meta-item">
+          <span class="meta-value">Timeline</span>
+          <h3 class="meta-label">Feb — Jul 2026</h3>
+        </div>
+
+        <div class="meta-item">
+          <span class="meta-value">Tech Stack</span>
+          <h3 class="meta-label">Vue 3 + TypeScript</h3>
+        </div>
+
+        <div class="meta-item">
+          <span class="meta-value">Backend</span>
+          <h3 class="meta-label">Node.js + Express</h3>
+        </div>
+
+        <div class="meta-item">
+          <span class="meta-value">Database</span>
+          <h3 class="meta-label">PostgreSQL</h3>
+        </div>
+
+        <div class="meta-item">
+          <span class="meta-value">Deployment</span>
+          <h3 class="meta-label">GitHub Pages + Render</h3>
+        </div>
+      </section>
+
+      <!-- NAVIGATION LINKS -->
+      <section class="project-index">
+        <h2 class="section-heading">Overview</h2>
+        <div class="index-grid">
+          <!-- Column 1 -->
+          <div class="index-column">
+            <a href="#about" class="index-title">About</a>
+            <ul class="index-list">
+              <li class="index-link">What it does</li>
+              <li class="index-link">Who it's for</li>
+              <li class="index-link">Why it matters</li>
+              <li class="index-link">Core problem solved</li>
+            </ul>
+          </div>
+
+          <!-- Column 2 -->
+          <div class="index-column">
+            <a href="#system" class="index-title">System Design</a>
+            <ul class="index-list">
+              <li class="index-link">Architecture Overview</li>
+              <li class="index-link">Backend Logic</li>
+              <li class="index-link">Deployment Pipeline</li>
+              <li class="index-link">Database Schema</li>
+              <li class="index-link">API Structure</li>
+            </ul>
+          </div>
+
+          <!-- Column 3 -->
+          <div class="index-column">
+            <a href="#ux" class="index-title">UX Study</a>
+            <ul class="index-list">
+              <li class="index-link">The Problem</li>
+              <li class="index-link">Process & Iterations</li>
+              <li class="index-link">Research & Insights</li>
+              <li class="index-link">Final Solution</li>
+            </ul>
+          </div>
+
+          <!-- Column 4 -->
+          <div class="index-column">
+            <a href="#gallery" class="index-title">Gallery</a>
+            <ul class="index-list">
+              <li class="index-link">Main Interface</li>
+              <li class="index-link">Core Features</li>
+              <li class="index-link">Responsive Design</li>
+              <li class="index-link">UI States</li>
+            </ul>
+          </div>
+
+          <!-- Column 5 -->
+          <div class="index-column">
+            <a href="#resources" class="index-title">Resources</a>
+            <ul class="index-list">
+              <li class="index-link">
+                <a
+                  href="https://netlink.netlify.app"
+                  class="index-important"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Live Demo</a
+                >
+              </li>
+              <li class="index-link">Repositories</li>
+              <li class="index-link">Documentation Files</li>
+            </ul>
+          </div>
+
+          <!-- Column 6 -->
+          <div class="index-column">
+            <a href="#thoughts" class="index-title">Final Thoughts</a>
+            <ul class="index-list">
+              <li class="index-link">What I learned</li>
+              <li class="index-link">Results & Impact</li>
+              <li class="index-link">Collaborations & Contact Me</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT THIS APP -->
+      <section class="project-about" id="about">
+        <h2 class="section-heading">About</h2>
+        <p class="about-intro">
+          Netlink is a modern communication platform designed to streamline how
+          users connect, share, and collaborate across devices. Built with
+          performance and scalability in mind, it delivers a seamless experience
+          for both individuals and teams.
+        </p>
+        <div class="about-grid">
+          <div class="about-card">
+            <div class="about-card-header">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                fill="#000000"
+                viewBox="0 0 256 256"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path
+                  d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,160H40V56H216V200ZM80,84A12,12,0,1,1,68,72,12,12,0,0,1,80,84Zm40,0a12,12,0,1,1-12-12A12,12,0,0,1,120,84Z"
+                ></path>
+              </svg>
+              <h3 class="about-card-title">What It Does</h3>
+            </div>
+            <p class="about-card-text">
+              Netlink centralizes <span class="highlight">messaging</span>,
+              <span class="highlight">media sharing</span>, and
+              <span class="highlight">real‑time interactions</span> into one
+              unified platform.
+            </p>
+          </div>
+          <div class="about-card">
+            <div class="about-card-header">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                fill="#000000"
+                viewBox="0 0 256 256"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path
+                  d="M117.25,157.92a60,60,0,1,0-66.5,0A95.83,95.83,0,0,0,3.53,195.63a8,8,0,1,0,13.4,8.74,80,80,0,0,1,134.14,0,8,8,0,0,0,13.4-8.74A95.83,95.83,0,0,0,117.25,157.92ZM40,108a44,44,0,1,1,44,44A44.05,44.05,0,0,1,40,108Zm210.14,98.7a8,8,0,0,1-11.07-2.33A79.83,79.83,0,0,0,172,168a8,8,0,0,1,0-16,44,44,0,1,0-16.34-84.87,8,8,0,1,1-5.94-14.85,60,60,0,0,1,55.53,105.64,95.83,95.83,0,0,1,47.22,37.71A8,8,0,0,1,250.14,206.7Z"
+                ></path>
+              </svg>
+              <h3 class="about-card-title">Who It’s For</h3>
+            </div>
+            <p class="about-card-text">
+              Designed for <span class="highlight">everyday users</span>,
+              <span class="highlight">small teams</span>, and
+              <span class="highlight">communities</span> who need fast, reliable
+              communication.
+            </p>
+          </div>
+          <div class="about-card">
+            <div class="about-card-header">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                fill="#000000"
+                viewBox="0 0 256 256"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path
+                  d="M140,180a12,12,0,1,1-12-12A12,12,0,0,1,140,180ZM128,72c-22.06,0-40,16.15-40,36v4a8,8,0,0,0,16,0v-4c0-11,10.77-20,24-20s24,9,24,20-10.77,20-24,20a8,8,0,0,0-8,8v8a8,8,0,0,0,16,0v-.72c18.24-3.35,32-17.9,32-35.28C168,88.15,150.06,72,128,72Zm104,56A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88,88,0,1,0-88,88A88.1,88.1,0,0,0,216,128Z"
+                ></path>
+              </svg>
+              <h3 class="about-card-title">Why It Matters</h3>
+            </div>
+            <p class="about-card-text">
+              It reduces <span class="highlight">communication friction</span>,
+              improves <span class="highlight">collaboration</span>, and
+              provides a <span class="highlight">clean, modern interface</span>.
+            </p>
+          </div>
+          <div class="about-card">
+            <div class="about-card-header">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                fill="#000000"
+                viewBox="0 0 256 256"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path
+                  d="M144,92a12,12,0,1,1,12,12A12,12,0,0,1,144,92ZM100,80a12,12,0,1,0,12,12A12,12,0,0,0,100,80Zm116,64A87.76,87.76,0,0,1,213,167l22.24,9.72A8,8,0,0,1,232,192a7.89,7.89,0,0,1-3.2-.67L207.38,182a88,88,0,0,1-158.76,0L27.2,191.33A7.89,7.89,0,0,1,24,192a8,8,0,0,1-3.2-15.33L43,167A87.76,87.76,0,0,1,40,144v-8H16a8,8,0,0,1,0-16H40v-8a87.76,87.76,0,0,1,3-23L20.8,79.33a8,8,0,1,1,6.4-14.66L48.62,74a88,88,0,0,1,158.76,0l21.42-9.36a8,8,0,0,1,6.4,14.66L213,89.05a87.76,87.76,0,0,1,3,23v8h24a8,8,0,0,1,0,16H216ZM56,120H200v-8a72,72,0,0,0-144,0Zm64,95.54V136H56v8A72.08,72.08,0,0,0,120,215.54ZM200,144v-8H136v79.54A72.08,72.08,0,0,0,200,144Z"
+                ></path>
+              </svg>
+              <h3 class="about-card-title">Core Problem Solved</h3>
+            </div>
+            <p class="about-card-text">
+              Netlink eliminates
+              <span class="highlight">fragmented communication</span> by
+              offering a
+              <span class="highlight">single, scalable platform</span> for
+              messaging and media sharing.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SYSTEM DESIGN -->
+      <section class="system-section" id="system">
+        <h2 class="section-heading">System Design</h2>
+
+        <div class="system-grid">
+          <!-- LEFT COLUMN: ARCHITECTURE + BACKEND LOGIC + DEPLOYMENT -->
+          <div class="system-column system-column-main">
+            <h3 class="system-subtitle">Architecture Overview</h3>
+            <p class="system-text">
+              Netlink uses a
+              <span class="system-highlight"
+                >modular, service‑oriented architecture</span
+              >
+              designed for clarity, scalability, and maintainability. The
+              frontend is a
+              <span class="system-highlight">Vue 3 + TypeScript</span> SPA with
+              component‑driven UI,
+              <span class="system-highlight">Pinia</span> state, composables,
+              and SCSS modules. The backend is a
+              <span class="system-highlight">Node.js + Express</span> REST API
+              with modular controllers, services, and middleware. Data is
+              persisted in <span class="system-highlight">PostgreSQL</span> via
+              <span class="system-highlight">Prisma ORM</span>, using a strong
+              relational schema and type‑safe queries.
+            </p>
+
+            <p class="system-text">
+              Key architectural principles include
+              <span class="system-highlight">separation of concerns</span> (UI,
+              API, DB),
+              <span class="system-highlight">composable logic</span> (Vue
+              composables + backend services),
+              <span class="system-highlight">strict typing</span> (TypeScript +
+              Prisma), a
+              <span class="system-highlight">scalable moderation layer</span>
+              (block, mute, report), and a
+              <span class="system-highlight">responsive design system</span>
+              that adapts from mobile to desktop.
+            </p>
+
+            <h3 class="system-subtitle">Backend Logic</h3>
+            <p class="system-text">
+              The backend is built around
+              <span class="system-highlight"
+                >modular controllers, service functions, and middleware</span
+              >. Core features include
+              <span class="system-highlight">authentication (JWT)</span>,
+              <span class="system-highlight">posts</span> (CRUD, likes,
+              comments, reposts),
+              <span class="system-highlight">messaging</span> (chats, messages,
+              participants),
+              <span class="system-highlight">notifications</span> (follows,
+              likes, comments, messages),
+              <span class="system-highlight">moderation</span> (block, mute,
+              report), and
+              <span class="system-highlight">user profiles</span> (avatar, bio,
+              settings).
+            </p>
+
+            <p class="system-text">
+              Moderation follows an
+              <span class="system-highlight"
+                >Instagram‑style enforcement model</span
+              >: when a user blocks another, the system removes follows, likes,
+              comments, favorites, reposts, notifications, deletes chats and
+              messages between them, prevents future interactions, and hides
+              each user from the other's feed and search. A
+              <span class="system-highlight">Block record</span> is stored to
+              enforce these rules consistently. Middleware such as
+              <span class="system-highlight">authMiddleware</span> (JWT
+              validation),
+              <span class="system-highlight">blockCheckMiddleware</span>
+              (blocked interaction checks), optional
+              <span class="system-highlight">rateLimitMiddleware</span>, and a
+              unified <span class="system-highlight">errorHandler</span> keep
+              the API secure and predictable.
+            </p>
+
+            <h3 class="system-subtitle">Deployment Pipeline</h3>
+            <p class="system-text">
+              Netlink uses a
+              <span class="system-highlight"
+                >simple, reliable deployment setup</span
+              >
+              optimized for personal projects and portfolios. The frontend is
+              built with <span class="system-highlight">Vite</span> and deployed
+              to <span class="system-highlight">Netlify</span>, with
+              auto‑deploys on push to
+              <span class="system-highlight">main</span>. The backend (<span
+                class="system-highlight"
+                >Node.js + Express</span
+              >) is hosted on <span class="system-highlight">Railway</span>,
+              with environment variables stored securely.
+              <span class="system-highlight">PostgreSQL</span> runs on a managed
+              <span class="system-highlight">Railway</span> cloud instance, and
+              <span class="system-highlight">Prisma migrations</span> are
+              applied automatically on deploy.
+            </p>
+
+            <p class="system-text">
+              The pipeline flow is: push to GitHub → optional GitHub Actions →
+              backend deploys to Railway → frontend deploys to Netlify → Prisma
+              migrations run → the app goes live.
+            </p>
+          </div>
+
+          <!-- RIGHT COLUMN: DATABASE SCHEMA + API STRUCTURE -->
+          <div class="system-column system-column-side">
+            <div class="system-card">
+              <h3 class="system-card-title">Database Schema</h3>
+              <p class="system-card-text">
+                Netlink uses
+                <span class="system-highlight">Prisma + PostgreSQL</span> with a
+                relational schema tailored to a social + messaging platform.
+              </p>
+              <p class="system-card-text">Core models:</p>
+              <ul class="system-list">
+                <li>
+                  <span class="system-highlight">User</span> — auth, profile,
+                  settings
+                </li>
+                <li>
+                  <span class="system-highlight">Post</span> — content, media,
+                  visibility
+                </li>
+                <li>
+                  <span class="system-highlight">Comment</span> — post comments
+                </li>
+                <li><span class="system-highlight">Like</span> — post likes</li>
+                <li>
+                  <span class="system-highlight">Favorite</span> — saved
+                  posts/users
+                </li>
+                <li>
+                  <span class="system-highlight">Share (Repost)</span> —
+                  reposted content
+                </li>
+                <li>
+                  <span class="system-highlight">Follow</span> —
+                  follower/following graph
+                </li>
+                <li>
+                  <span class="system-highlight">Chat</span> — chat threads
+                </li>
+                <li>
+                  <span class="system-highlight">ChatParticipant</span> — users
+                  in chats
+                </li>
+                <li>
+                  <span class="system-highlight">Message</span> — chat messages
+                </li>
+                <li>
+                  <span class="system-highlight">Notification</span> — event
+                  notifications
+                </li>
+                <li>
+                  <span class="system-highlight">Block</span> — hard blocks
+                </li>
+                <li><span class="system-highlight">Mute</span> — soft mutes</li>
+                <li>
+                  <span class="system-highlight">Report</span> — abuse reports
+                </li>
+              </ul>
+              <p class="system-card-text">
+                Moderation models like
+                <span class="system-highlight">Block</span>,
+                <span class="system-highlight">Mute</span>, and
+                <span class="system-highlight">Report</span> are designed with
+                unique constraints and cascades to ensure consistent enforcement
+                and safety.
+              </p>
+            </div>
+
+            <div class="system-card">
+              <h3 class="system-card-title">API Structure</h3>
+              <p class="system-card-text">
+                The API follows a
+                <span class="system-highlight"
+                  >RESTful, resource‑based structure</span
+                >
+                with clean endpoints and feature‑based routers.
+              </p>
+              <ul class="system-list">
+                <li>
+                  <span class="system-highlight">/auth</span> — register, login,
+                  <code>GET /auth/me</code>
+                </li>
+                <li>
+                  <span class="system-highlight">/users</span> —
+                  <code>GET /users/:id</code>, <code>PUT /users/update</code>,
+                  search
+                </li>
+                <li>
+                  <span class="system-highlight">/posts</span> —
+                  <code>POST /posts</code>, <code>GET /posts/feed</code>, like,
+                  comment, share
+                </li>
+                <li>
+                  <span class="system-highlight">/chats</span> —
+                  <code>POST /chats</code>, <code>GET /chats</code>
+                </li>
+                <li>
+                  <span class="system-highlight">/messages</span> —
+                  <code>POST /messages</code>,
+                  <code>GET /messages/:chatId</code>
+                </li>
+                <li>
+                  <span class="system-highlight">/notifications</span> —
+                  <code>GET /notifications</code>
+                </li>
+                <li>
+                  <span class="system-highlight">/block</span>,
+                  <span class="system-highlight">/mute</span>,
+                  <span class="system-highlight">/report</span> — moderation
+                  actions
+                </li>
+              </ul>
+              <p class="system-card-text">
+                All protected routes require
+                <span class="system-highlight">JWT</span>
+                and pass through validation + moderation checks.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- UX CASE STUDY -->
+      <section class="ux-section" id="ux">
+        <h2 class="section-heading">UX Case Study</h2>
+        <div class="ux-grid">
+          <div class="ux-subgrid">
+            <!-- PROBLEM -->
+            <div class="ux-subcard">
+              <h3 class="ux-subtitle">The Problem</h3>
+              <p class="ux-text">
+                Users struggled with
+                <span class="ux-highlight">fragmented communication</span>
+                across multiple apps.
+              </p>
+              <p class="ux-text">
+                Conversations, media, notifications, and social interactions
+                were scattered, making it difficult to stay organized and
+                maintain meaningful connections.
+              </p>
+            </div>
+            <!-- PROCESS -->
+            <div class="ux-subcard">
+              <h3 class="ux-subtitle">Process & Iterations</h3>
+              <p class="ux-text">
+                We explored multiple UI flows, focusing on reducing cognitive
+                load and improving clarity. Key decisions included:
+              </p>
+              <ul class="ux-list ux-list-dark">
+                <li>
+                  Unified
+                  <span class="ux-highlight">chat + social feed</span>
+                  navigation.
+                </li>
+                <li>
+                  Lightweight
+                  <span class="ux-highlight">message composer</span> with media
+                  shortcuts.
+                </li>
+                <li>
+                  Clear
+                  <span class="ux-highlight">visibility controls</span> for
+                  posts and profiles.
+                </li>
+                <li>
+                  Instagram‑style
+                  <span class="ux-highlight">moderation UX</span> with silent
+                  enforcement.
+                </li>
+              </ul>
+            </div>
+            <!-- FINAL SOLUTION -->
+            <div class="ux-subcard">
+              <h3 class="ux-subtitle">Final Solution</h3>
+              <p class="ux-text">
+                Netlink delivers a
+                <span class="ux-highlight"
+                  >clean, unified communication experience</span
+                >
+                with fast messaging, intuitive post creation, and seamless
+                moderation. The interface adapts responsively from mobile to
+                desktop, ensuring consistency across devices.
+              </p>
+            </div>
+          </div>
+          <div class="ux-subgrid">
+            <!-- RESEARCH -->
+            <div class="ux-subcard">
+              <h3 class="ux-subtitle">Research & Insights</h3>
+              <p class="ux-text">
+                Through user interviews and behavioral analysis, we identified
+                three core insights:
+              </p>
+              <ul class="ux-list">
+                <li>
+                  <p class="ux-list-highlight">Users want simplicity</p>
+                  <span>— fewer screens, fewer steps.</span>
+                </li>
+                <li>
+                  <p class="ux-list-highlight">Messaging must feel instant</p>
+                  <span>— no delays, no friction.</span>
+                </li>
+                <li>
+                  <p class="ux-list-highlight">Moderation must be invisible</p>
+                  <span>— safety without disruption.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- GALLERY -->
+      <section class="project-gallery" id="gallery">
+        <h2 class="gallery-title">Gallery</h2>
+        <section class="gallery gallery-primary">
+          <p class="gallery-heading">Main Interface</p>
+          <div class="gallery-primary-wrapper gallery-item">
+            <img
+              src="../assets/gallery/desktop-main.webp"
+              alt="Main Dashboard UI"
+              class="gallery-img"
+            />
+          </div>
+        </section>
+        <section class="gallery gallery-features">
+          <p class="gallery-heading">Core Features</p>
+          <div class="gallery-grid">
+            <div class="gallery-item">
+              <img
+                src="../assets/gallery/feed.webp"
+                alt="Feed Interface"
+                class="gallery-img"
+              />
+              <p class="gallery-label">Feed Interface</p>
+            </div>
+            <div class="gallery-item">
+              <img
+                src="../assets/gallery/post-creation.webp"
+                alt="Post Creation UI"
+                class="gallery-img"
+              />
+              <p class="gallery-label">Post Creation UI</p>
+            </div>
+            <div class="gallery-item">
+              <img
+                src="../assets/gallery/chat.webp"
+                alt="Chat Interface"
+                class="gallery-img"
+              />
+              <p class="gallery-label">Chat Interface</p>
+            </div>
+            <div class="gallery-item">
+              <img
+                src="../assets/gallery/connections.webp"
+                alt="Connections UI"
+                class="gallery-img"
+              />
+              <p class="gallery-label">Connections UI</p>
+            </div>
+            <div class="gallery-item">
+              <img
+                src="../assets/gallery/moderation.webp"
+                alt="Moderation Tools UI"
+                class="gallery-img"
+              />
+              <p class="gallery-label">Moderation Tools UI</p>
+            </div>
+          </div>
+        </section>
+        <section class="gallery gallery-responsive">
+          <p class="gallery-heading">Responsive Design</p>
+          <div class="gallery-grid">
+            <div class="gallery-item">
+              <img
+                src="../assets/gallery/desktop.webp"
+                alt="Desktop Layout"
+                class="gallery-img"
+              />
+              <p class="gallery-label">Desktop Layout</p>
+            </div>
+            <div class="gallery-item">
+              <img
+                src="../assets/gallery/tablet.webp"
+                alt="Tablet Layout"
+                class="gallery-img"
+              />
+              <p class="gallery-label">Tablet Layout</p>
+            </div>
+            <div class="gallery-item">
+              <img
+                src="../assets/gallery/mobile.webp"
+                alt="Mobile Layout"
+                class="gallery-img"
+              />
+              <p class="gallery-label">Mobile Layout</p>
+            </div>
+          </div>
+        </section>
+        <section class="gallery gallery-states">
+          <p class="gallery-heading">UI States</p>
+          <div class="gallery-grid">
+            <div class="gallery-item">
+              <img
+                src="../assets/gallery/empty-state.webp"
+                alt="Empty State UI"
+                class="gallery-img"
+              />
+              <p class="gallery-label">Empty State UI</p>
+            </div>
+            <div class="gallery-item">
+              <img
+                src="../assets/gallery/loading-state.webp"
+                alt="Loading State UI"
+                class="gallery-img"
+              />
+              <p class="gallery-label">Loading State UI</p>
+            </div>
+            <div class="gallery-item">
+              <img
+                src="../assets/gallery/error-state.webp"
+                alt="Error State UI"
+                class="gallery-img"
+              />
+              <p class="gallery-label">Error State UI</p>
+            </div>
+            <div class="gallery-item">
+              <img
+                src="../assets/gallery/success-state.webp"
+                alt="Success State UI"
+                class="gallery-img"
+              />
+              <p class="gallery-label">Success State UI</p>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <!-- LINKS + RESOURCES -->
+      <section class="links-section" id="resources">
+        <h2 class="section-heading">Resources</h2>
+
+        <div class="links-grid">
+          <a
+            href="https://net1ink.netlify.app"
+            target="_blank"
+            class="link-card"
+          >
+            <div class="link-head">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                fill="#000000"
+                viewBox="0 0 256 256"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path
+                  d="M223.85,47.12a16,16,0,0,0-15-15c-12.58-.75-44.73.4-71.41,27.07L132.69,64H74.36A15.91,15.91,0,0,0,63,68.68L28.7,103a16,16,0,0,0,9.07,27.16l38.47,5.37,44.21,44.21,5.37,38.49a15.94,15.94,0,0,0,10.78,12.92,16.11,16.11,0,0,0,5.1.83A15.91,15.91,0,0,0,153,227.3L187.32,193A15.91,15.91,0,0,0,192,181.64V123.31l4.77-4.77C223.45,91.86,224.6,59.71,223.85,47.12ZM74.36,80h42.33L77.16,119.52,40,114.34Zm74.41-9.45a76.65,76.65,0,0,1,59.11-22.47,76.46,76.46,0,0,1-22.42,59.16L128,164.68,91.32,128ZM176,181.64,141.67,216l-5.19-37.17L176,139.31Zm-74.16,9.5C97.34,201,82.29,224,40,224a8,8,0,0,1-8-8c0-42.29,23-57.34,32.86-61.85a8,8,0,0,1,6.64,14.56c-6.43,2.93-20.62,12.36-23.12,38.91,26.55-2.5,36-16.69,38.91-23.12a8,8,0,1,1,14.56,6.64Z"
+                ></path>
+              </svg>
+              <h3 class="link-title">Live Demo</h3>
+            </div>
+            <p class="link-desc">
+              Explore the deployed version of Netlink — fast, responsive, and
+              production‑ready.
+            </p>
+          </a>
+          <a
+            href="https://github.com/kevinvondumke/netlink-frontend"
+            target="_blank"
+            class="link-card"
+          >
+            <div class="link-head">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                fill="#000000"
+                viewBox="0 0 256 256"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path
+                  d="M208.31,75.68A59.78,59.78,0,0,0,202.93,28,8,8,0,0,0,196,24a59.75,59.75,0,0,0-48,24H124A59.75,59.75,0,0,0,76,24a8,8,0,0,0-6.93,4,59.78,59.78,0,0,0-5.38,47.68A58.14,58.14,0,0,0,56,104v8a56.06,56.06,0,0,0,48.44,55.47A39.8,39.8,0,0,0,96,192v8H72a24,24,0,0,1-24-24A40,40,0,0,0,8,136a8,8,0,0,0,0,16,24,24,0,0,1,24,24,40,40,0,0,0,40,40H96v16a8,8,0,0,0,16,0V192a24,24,0,0,1,48,0v40a8,8,0,0,0,16,0V192a39.8,39.8,0,0,0-8.44-24.53A56.06,56.06,0,0,0,216,112v-8A58.14,58.14,0,0,0,208.31,75.68ZM200,112a40,40,0,0,1-40,40H112a40,40,0,0,1-40-40v-8a41.74,41.74,0,0,1,6.9-22.48A8,8,0,0,0,80,73.83a43.81,43.81,0,0,1,.79-33.58,43.88,43.88,0,0,1,32.32,20.06A8,8,0,0,0,119.82,64h32.35a8,8,0,0,0,6.74-3.69,43.87,43.87,0,0,1,32.32-20.06A43.81,43.81,0,0,1,192,73.83a8.09,8.09,0,0,0,1,7.65A41.72,41.72,0,0,1,200,104Z"
+                ></path>
+              </svg>
+              <h3 class="link-title">GitHub - Frontend</h3>
+            </div>
+            <p class="link-desc">
+              Explore UI logic, state management, and component structure.
+            </p>
+          </a>
+          <a
+            href="https://github.com/kevinvondumke/netlink-backend"
+            target="_blank"
+            class="link-card"
+          >
+            <div class="link-head">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                fill="#000000"
+                viewBox="0 0 256 256"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path
+                  d="M208.31,75.68A59.78,59.78,0,0,0,202.93,28,8,8,0,0,0,196,24a59.75,59.75,0,0,0-48,24H124A59.75,59.75,0,0,0,76,24a8,8,0,0,0-6.93,4,59.78,59.78,0,0,0-5.38,47.68A58.14,58.14,0,0,0,56,104v8a56.06,56.06,0,0,0,48.44,55.47A39.8,39.8,0,0,0,96,192v8H72a24,24,0,0,1-24-24A40,40,0,0,0,8,136a8,8,0,0,0,0,16,24,24,0,0,1,24,24,40,40,0,0,0,40,40H96v16a8,8,0,0,0,16,0V192a24,24,0,0,1,48,0v40a8,8,0,0,0,16,0V192a39.8,39.8,0,0,0-8.44-24.53A56.06,56.06,0,0,0,216,112v-8A58.14,58.14,0,0,0,208.31,75.68ZM200,112a40,40,0,0,1-40,40H112a40,40,0,0,1-40-40v-8a41.74,41.74,0,0,1,6.9-22.48A8,8,0,0,0,80,73.83a43.81,43.81,0,0,1,.79-33.58,43.88,43.88,0,0,1,32.32,20.06A8,8,0,0,0,119.82,64h32.35a8,8,0,0,0,6.74-3.69,43.87,43.87,0,0,1,32.32-20.06A43.81,43.81,0,0,1,192,73.83a8.09,8.09,0,0,0,1,7.65A41.72,41.72,0,0,1,200,104Z"
+                ></path>
+              </svg>
+              <h3 class="link-title">GitHub - Backend</h3>
+            </div>
+            <p class="link-desc">
+              Review API structure, routing, and business logic.
+            </p>
+          </a>
+          <a
+            href="https://drive.google.com/file/d/1Naf46WR4nJorTqOahmh8vDb0iQ39OVAa/view?usp=sharing"
+            target="_blank"
+            class="link-card"
+          >
+            <div class="link-head">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                fill="#000000"
+                viewBox="0 0 256 256"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path
+                  d="M52,144H36a8,8,0,0,0-8,8v56a8,8,0,0,0,8,8H52a36,36,0,0,0,0-72Zm0,56H44V160h8a20,20,0,0,1,0,40Zm169.53-4.91a8,8,0,0,1,.25,11.31A30.06,30.06,0,0,1,200,216c-17.65,0-32-16.15-32-36s14.35-36,32-36a30.06,30.06,0,0,1,21.78,9.6,8,8,0,0,1-11.56,11.06A14.24,14.24,0,0,0,200,160c-8.82,0-16,9-16,20s7.18,20,16,20a14.24,14.24,0,0,0,10.22-4.66A8,8,0,0,1,221.53,195.09ZM128,144c-17.65,0-32,16.15-32,36s14.35,36,32,36,32-16.15,32-36S145.65,144,128,144Zm0,56c-8.82,0-16-9-16-20s7.18-20,16-20,16,9,16,20S136.82,200,128,200ZM48,120a8,8,0,0,0,8-8V40h88V88a8,8,0,0,0,8,8h48v16a8,8,0,0,0,16,0V88a8,8,0,0,0-2.34-5.66l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40v72A8,8,0,0,0,48,120ZM160,51.31,188.69,80H160Z"
+                ></path>
+              </svg>
+              <h3 class="link-title">Project Overview</h3>
+            </div>
+            <p class="link-desc">Vision, goals, and product architecture.</p>
+          </a>
+          <a
+            href="https://drive.google.com/file/d/1xsVre0acOawfyDfVuUGkWG0DZjumHWVt/view?usp=sharing"
+            target="_blank"
+            class="link-card"
+          >
+            <div class="link-head">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                fill="#000000"
+                viewBox="0 0 256 256"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path
+                  d="M52,144H36a8,8,0,0,0-8,8v56a8,8,0,0,0,8,8H52a36,36,0,0,0,0-72Zm0,56H44V160h8a20,20,0,0,1,0,40Zm169.53-4.91a8,8,0,0,1,.25,11.31A30.06,30.06,0,0,1,200,216c-17.65,0-32-16.15-32-36s14.35-36,32-36a30.06,30.06,0,0,1,21.78,9.6,8,8,0,0,1-11.56,11.06A14.24,14.24,0,0,0,200,160c-8.82,0-16,9-16,20s7.18,20,16,20a14.24,14.24,0,0,0,10.22-4.66A8,8,0,0,1,221.53,195.09ZM128,144c-17.65,0-32,16.15-32,36s14.35,36,32,36,32-16.15,32-36S145.65,144,128,144Zm0,56c-8.82,0-16-9-16-20s7.18-20,16-20,16,9,16,20S136.82,200,128,200ZM48,120a8,8,0,0,0,8-8V40h88V88a8,8,0,0,0,8,8h48v16a8,8,0,0,0,16,0V88a8,8,0,0,0-2.34-5.66l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40v72A8,8,0,0,0,48,120ZM160,51.31,188.69,80H160Z"
+                ></path>
+              </svg>
+              <h3 class="link-title">Research</h3>
+            </div>
+            <p class="link-desc">UX research and product decisions.</p>
+          </a>
+          <a
+            href="https://drive.google.com/file/d/1BJ6aUp3alGmlyRx11Qh6Mvl33WKQfi7T/view?usp=sharing"
+            target="_blank"
+            class="link-card"
+          >
+            <div class="link-head">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                fill="#000000"
+                viewBox="0 0 256 256"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path
+                  d="M52,144H36a8,8,0,0,0-8,8v56a8,8,0,0,0,8,8H52a36,36,0,0,0,0-72Zm0,56H44V160h8a20,20,0,0,1,0,40Zm169.53-4.91a8,8,0,0,1,.25,11.31A30.06,30.06,0,0,1,200,216c-17.65,0-32-16.15-32-36s14.35-36,32-36a30.06,30.06,0,0,1,21.78,9.6,8,8,0,0,1-11.56,11.06A14.24,14.24,0,0,0,200,160c-8.82,0-16,9-16,20s7.18,20,16,20a14.24,14.24,0,0,0,10.22-4.66A8,8,0,0,1,221.53,195.09ZM128,144c-17.65,0-32,16.15-32,36s14.35,36,32,36,32-16.15,32-36S145.65,144,128,144Zm0,56c-8.82,0-16-9-16-20s7.18-20,16-20,16,9,16,20S136.82,200,128,200ZM48,120a8,8,0,0,0,8-8V40h88V88a8,8,0,0,0,8,8h48v16a8,8,0,0,0,16,0V88a8,8,0,0,0-2.34-5.66l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40v72A8,8,0,0,0,48,120ZM160,51.31,188.69,80H160Z"
+                ></path>
+              </svg>
+              <h3 class="link-title">UX - User Flows</h3>
+            </div>
+            <p class="link-desc">User journeys and interaction flows.</p>
+          </a>
+          <a
+            href="https://drive.google.com/file/d/1mrPBcrLJWQWVe96UaSJf2tD3QVCnxpTz/view?usp=sharing"
+            target="_blank"
+            class="link-card"
+          >
+            <div class="link-head">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                fill="#000000"
+                viewBox="0 0 256 256"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path
+                  d="M52,144H36a8,8,0,0,0-8,8v56a8,8,0,0,0,8,8H52a36,36,0,0,0,0-72Zm0,56H44V160h8a20,20,0,0,1,0,40Zm169.53-4.91a8,8,0,0,1,.25,11.31A30.06,30.06,0,0,1,200,216c-17.65,0-32-16.15-32-36s14.35-36,32-36a30.06,30.06,0,0,1,21.78,9.6,8,8,0,0,1-11.56,11.06A14.24,14.24,0,0,0,200,160c-8.82,0-16,9-16,20s7.18,20,16,20a14.24,14.24,0,0,0,10.22-4.66A8,8,0,0,1,221.53,195.09ZM128,144c-17.65,0-32,16.15-32,36s14.35,36,32,36,32-16.15,32-36S145.65,144,128,144Zm0,56c-8.82,0-16-9-16-20s7.18-20,16-20,16,9,16,20S136.82,200,128,200ZM48,120a8,8,0,0,0,8-8V40h88V88a8,8,0,0,0,8,8h48v16a8,8,0,0,0,16,0V88a8,8,0,0,0-2.34-5.66l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40v72A8,8,0,0,0,48,120ZM160,51.31,188.69,80H160Z"
+                ></path>
+              </svg>
+              <h3 class="link-title">UX - Wireframes</h3>
+            </div>
+            <p class="link-desc">Mid-fidelity interface planning.</p>
+          </a>
+          <a
+            href="https://drive.google.com/file/d/14_D3zNur5jU9m9oVqrGh-iAqnOz9IBoQ/view?usp=sharing"
+            target="_blank"
+            class="link-card"
+          >
+            <div class="link-head">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                fill="#000000"
+                viewBox="0 0 256 256"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path
+                  d="M52,144H36a8,8,0,0,0-8,8v56a8,8,0,0,0,8,8H52a36,36,0,0,0,0-72Zm0,56H44V160h8a20,20,0,0,1,0,40Zm169.53-4.91a8,8,0,0,1,.25,11.31A30.06,30.06,0,0,1,200,216c-17.65,0-32-16.15-32-36s14.35-36,32-36a30.06,30.06,0,0,1,21.78,9.6,8,8,0,0,1-11.56,11.06A14.24,14.24,0,0,0,200,160c-8.82,0-16,9-16,20s7.18,20,16,20a14.24,14.24,0,0,0,10.22-4.66A8,8,0,0,1,221.53,195.09ZM128,144c-17.65,0-32,16.15-32,36s14.35,36,32,36,32-16.15,32-36S145.65,144,128,144Zm0,56c-8.82,0-16-9-16-20s7.18-20,16-20,16,9,16,20S136.82,200,128,200ZM48,120a8,8,0,0,0,8-8V40h88V88a8,8,0,0,0,8,8h48v16a8,8,0,0,0,16,0V88a8,8,0,0,0-2.34-5.66l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40v72A8,8,0,0,0,48,120ZM160,51.31,188.69,80H160Z"
+                ></path>
+              </svg>
+              <h3 class="link-title">Technical Architecture</h3>
+            </div>
+            <p class="link-desc">
+              Complete software architecture documentation.
+            </p>
+          </a>
+          <a
+            href="https://drive.google.com/file/d/1pXzW92_9D1i_lTfwlqzxnxBNoCcPwYlF/view?usp=sharing"
+            target="_blank"
+            class="link-card"
+          >
+            <div class="link-head">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                fill="#000000"
+                viewBox="0 0 256 256"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path
+                  d="M52,144H36a8,8,0,0,0-8,8v56a8,8,0,0,0,8,8H52a36,36,0,0,0,0-72Zm0,56H44V160h8a20,20,0,0,1,0,40Zm169.53-4.91a8,8,0,0,1,.25,11.31A30.06,30.06,0,0,1,200,216c-17.65,0-32-16.15-32-36s14.35-36,32-36a30.06,30.06,0,0,1,21.78,9.6,8,8,0,0,1-11.56,11.06A14.24,14.24,0,0,0,200,160c-8.82,0-16,9-16,20s7.18,20,16,20a14.24,14.24,0,0,0,10.22-4.66A8,8,0,0,1,221.53,195.09ZM128,144c-17.65,0-32,16.15-32,36s14.35,36,32,36,32-16.15,32-36S145.65,144,128,144Zm0,56c-8.82,0-16-9-16-20s7.18-20,16-20,16,9,16,20S136.82,200,128,200ZM48,120a8,8,0,0,0,8-8V40h88V88a8,8,0,0,0,8,8h48v16a8,8,0,0,0,16,0V88a8,8,0,0,0-2.34-5.66l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40v72A8,8,0,0,0,48,120ZM160,51.31,188.69,80H160Z"
+                ></path>
+              </svg>
+              <h3 class="link-title">Future Roadmap</h3>
+            </div>
+            <p class="link-desc">Product and engineering roadmap.</p>
+          </a>
+          <a
+            href="https://drive.google.com/file/d/1UcBZk7hPzU6e69_POssPVDxS3KJf3Loc/view?usp=sharing"
+            target="_blank"
+            class="link-card"
+          >
+            <div class="link-head">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                fill="#000000"
+                viewBox="0 0 256 256"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path
+                  d="M52,144H36a8,8,0,0,0-8,8v56a8,8,0,0,0,8,8H52a36,36,0,0,0,0-72Zm0,56H44V160h8a20,20,0,0,1,0,40Zm169.53-4.91a8,8,0,0,1,.25,11.31A30.06,30.06,0,0,1,200,216c-17.65,0-32-16.15-32-36s14.35-36,32-36a30.06,30.06,0,0,1,21.78,9.6,8,8,0,0,1-11.56,11.06A14.24,14.24,0,0,0,200,160c-8.82,0-16,9-16,20s7.18,20,16,20a14.24,14.24,0,0,0,10.22-4.66A8,8,0,0,1,221.53,195.09ZM128,144c-17.65,0-32,16.15-32,36s14.35,36,32,36,32-16.15,32-36S145.65,144,128,144Zm0,56c-8.82,0-16-9-16-20s7.18-20,16-20,16,9,16,20S136.82,200,128,200ZM48,120a8,8,0,0,0,8-8V40h88V88a8,8,0,0,0,8,8h48v16a8,8,0,0,0,16,0V88a8,8,0,0,0-2.34-5.66l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40v72A8,8,0,0,0,48,120ZM160,51.31,188.69,80H160Z"
+                ></path>
+              </svg>
+              <h3 class="link-title">UI Screens</h3>
+            </div>
+            <p class="link-desc">Responsive user interface showcase.</p>
+          </a>
+        </div>
+      </section>
+
+      <!-- RESULTS | LEARNING | CTA -->
+      <section class="final-section" id="thoughts">
+        <h2 class="section-heading">Final Thoughts & Collaboration</h2>
+
+        <div class="final-columns">
+          <!-- LEARNINGS -->
+          <div class="final-col">
+            <h3 class="final-subtitle">What I Learned</h3>
+            <p class="final-text">
+              Building Netlink taught me valuable lessons across engineering,
+              design, and architecture:
+            </p>
+
+            <ul class="final-list">
+              <li>
+                <span class="final-highlight">Technical:</span> Prisma modeling,
+                modular Express architecture, scalable moderation logic.
+              </li>
+              <li>
+                <span class="final-highlight">Design:</span> reducing cognitive
+                load, simplifying flows, improving clarity through hierarchy.
+              </li>
+              <li>
+                <span class="final-highlight">Architecture:</span>
+                service‑oriented backend, composable frontend logic, strict
+                typing.
+              </li>
+              <li>
+                <span class="final-highlight">Improvements:</span> refactoring
+                prototypes, isolating state, optimizing API boundaries.
+              </li>
+            </ul>
+          </div>
+
+          <!-- RESULTS -->
+          <div class="final-col">
+            <h3 class="final-subtitle">Results & Impact</h3>
+            <p class="final-text">
+              Netlink delivered measurable improvements across performance, UX,
+              and engagement:
+            </p>
+
+            <ul class="final-list">
+              <li>
+                <span class="final-highlight">40% faster</span> message flow due
+                to simplified UI + optimized routing.
+              </li>
+              <li>
+                <span class="final-highlight">Reduced friction</span> in post
+                creation, sharing, and chat interactions.
+              </li>
+              <li>
+                <span class="final-highlight">Zero confusion</span> around
+                moderation thanks to silent enforcement.
+              </li>
+              <li>
+                <span class="final-highlight">Higher engagement</span> in chats,
+                feed interactions, and notifications.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="final-cta">
+          <h3 class="final-subtitle">Let’s Collaborate</h3>
+          <p class="final-text">
+            If you’d like to talk about the project, my process, or potential
+            collaboration, feel free to reach out.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const galleryItems = document.querySelectorAll(".gallery-item");
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.2 },
+      );
+
+      galleryItems.forEach((item) => observer.observe(item));
+    </script>
+    <script src="../js/app.js"></script>
+  </body>
+</html>

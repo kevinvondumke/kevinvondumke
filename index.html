@@ -1,14 +1,536 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kevin Von Dumke | Portfolio</title>
-    <link rel="stylesheet" href="styles/index.css">
-</head>
-<body>
-    <div class="container">
-        <h1>Kevin Von Dumke</h1>
-    </div>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Kevin Von Dumke | Full Stack Developer</title>
+    <meta
+      name="description"
+      content="Full Stack Developer specializing in Vue.js, TypeScript, Node.js, Express, Prisma, and PostgreSQL. Explore my projects, technical documentation, and development process."
+    />
+    <meta
+      name="keywords"
+      content="Kevin Von Dumke, Full Stack Developer, Vue.js, TypeScript, Node.js, Express, Prisma, PostgreSQL, Portfolio, Software Engineer"
+    />
+
+    <meta name="theme-color" content="#0d0d0d" />
+
+    <meta name="author" content="Kevin Von Dumke" />
+    <meta name="robots" content="index, follow" />
+
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Kevin Von Dumke | Full Stack Developer"
+    />
+    <meta
+      property="og:description"
+      content="Explore my portfolio, featured projects, technical documentation, and engineering process."
+    />
+    <meta
+      property="og:image"
+      content="https://kevinvondumke.com/assets/og-image.png"
+    />
+    <meta property="og:url" content="https://kevinvondumke.com/" />
+    <meta property="og:site_name" content="Kevin Von Dumke Portfolio" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Kevin Von Dumke | Full Stack Developer"
+    />
+    <meta
+      name="twitter:description"
+      content="Explore my portfolio, featured projects, and technical documentation."
+    />
+    <meta
+      name="twitter:image"
+      content="https://kevinvondumke.com/assets/og-image.png"
+    />
+
+    <!-- Google Fonts CDN -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS Styles -->
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+  <body>
+    <div class="progress-bar"></div>
+    <div class="bg-lines"></div>
+    <header class="header" id="header">
+      <div class="container nav-container">
+        <!-- Logo -->
+        <a href="#hero" class="logo">
+          <span class="logo-accent">&lt;/&gt;</span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="nav" id="nav">
+          <ul class="nav-list">
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#skills" class="nav-link">Skills</a></li>
+            <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+          </ul>
+          <div class="header-actions">
+            <a
+              href="https://github.com/kevinvondumke"
+              target="_blank"
+              class="icon-btn"
+              aria-label="GitHub Profile"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="28"
+                height="28"
+                fill="#000000"
+                viewBox="0 0 256 256"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path
+                  d="M208.31,75.68A59.78,59.78,0,0,0,202.93,28,8,8,0,0,0,196,24a59.75,59.75,0,0,0-48,24H124A59.75,59.75,0,0,0,76,24a8,8,0,0,0-6.93,4,59.78,59.78,0,0,0-5.38,47.68A58.14,58.14,0,0,0,56,104v8a56.06,56.06,0,0,0,48.44,55.47A39.8,39.8,0,0,0,96,192v8H72a24,24,0,0,1-24-24A40,40,0,0,0,8,136a8,8,0,0,0,0,16,24,24,0,0,1,24,24,40,40,0,0,0,40,40H96v16a8,8,0,0,0,16,0V192a24,24,0,0,1,48,0v40a8,8,0,0,0,16,0V192a39.8,39.8,0,0,0-8.44-24.53A56.06,56.06,0,0,0,216,112v-8A58.14,58.14,0,0,0,208.31,75.68ZM200,112a40,40,0,0,1-40,40H112a40,40,0,0,1-40-40v-8a41.74,41.74,0,0,1,6.9-22.48A8,8,0,0,0,80,73.83a43.81,43.81,0,0,1,.79-33.58,43.88,43.88,0,0,1,32.32,20.06A8,8,0,0,0,119.82,64h32.35a8,8,0,0,0,6.74-3.69,43.87,43.87,0,0,1,32.32-20.06A43.81,43.81,0,0,1,192,73.83a8.09,8.09,0,0,0,1,7.65A41.72,41.72,0,0,1,200,104Z"
+                ></path>
+              </svg>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/kevinvondumke"
+              target="_blank"
+              class="icon-btn"
+              aria-label="LinkedIn Profile"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="28"
+                height="28"
+                fill="#000000"
+                viewBox="0 0 256 256"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path
+                  d="M216,24H40A16,16,0,0,0,24,40V216a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V40A16,16,0,0,0,216,24Zm0,192H40V40H216V216ZM96,112v64a8,8,0,0,1-16,0V112a8,8,0,0,1,16,0Zm88,28v36a8,8,0,0,1-16,0V140a20,20,0,0,0-40,0v36a8,8,0,0,1-16,0V112a8,8,0,0,1,15.79-1.78A36,36,0,0,1,184,140ZM100,84A12,12,0,1,1,88,72,12,12,0,0,1,100,84Z"
+                ></path>
+              </svg>
+            </a>
+            <button
+              class="theme-toggle"
+              id="theme-toggle"
+              type="button"
+              aria-label="Toggle theme"
+              aria-pressed="false"
+            >
+              <span class="theme-icon sun-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="28"
+                  height="28"
+                  fill="#000000"
+                  viewBox="0 0 256 256"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path
+                    d="M120,40V16a8,8,0,0,1,16,0V40a8,8,0,0,1-16,0Zm72,88a64,64,0,1,1-64-64A64.07,64.07,0,0,1,192,128Zm-16,0a48,48,0,1,0-48,48A48.05,48.05,0,0,0,176,128ZM58.34,69.66A8,8,0,0,0,69.66,58.34l-16-16A8,8,0,0,0,42.34,53.66Zm0,116.68-16,16a8,8,0,0,0,11.32,11.32l16-16a8,8,0,0,0-11.32-11.32ZM192,72a8,8,0,0,0,5.66-2.34l16-16a8,8,0,0,0-11.32-11.32l-16,16A8,8,0,0,0,192,72Zm5.66,114.34a8,8,0,0,0-11.32,11.32l16,16a8,8,0,0,0,11.32-11.32ZM48,128a8,8,0,0,0-8-8H16a8,8,0,0,0,0,16H40A8,8,0,0,0,48,128Zm80,80a8,8,0,0,0-8,8v24a8,8,0,0,0,16,0V216A8,8,0,0,0,128,208Zm112-88H216a8,8,0,0,0,0,16h24a8,8,0,0,0,0-16Z"
+                  ></path>
+                </svg>
+              </span>
+              <span class="theme-icon moon-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="28"
+                  height="28"
+                  fill="#000000"
+                  viewBox="0 0 256 256"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path
+                    d="M233.54,142.23a8,8,0,0,0-8-2,88.08,88.08,0,0,1-109.8-109.8,8,8,0,0,0-10-10,104.84,104.84,0,0,0-52.91,37A104,104,0,0,0,136,224a103.09,103.09,0,0,0,62.52-20.88,104.84,104.84,0,0,0,37-52.91A8,8,0,0,0,233.54,142.23ZM188.9,190.34A88,88,0,0,1,65.66,67.11a89,89,0,0,1,31.4-26A106,106,0,0,0,96,56,104.11,104.11,0,0,0,200,160a106,106,0,0,0,14.92-1.06A89,89,0,0,1,188.9,190.34Z"
+                  ></path>
+                </svg>
+              </span>
+            </button>
+            <a href="assets/resume.pdf" class="resume-btn" download aria-label="Download Resume PDF">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="#000000"
+                viewBox="0 0 256 256"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path
+                  d="M224,144v64a8,8,0,0,1-8,8H40a8,8,0,0,1-8-8V144a8,8,0,0,1,16,0v56H208V144a8,8,0,0,1,16,0Zm-101.66,5.66a8,8,0,0,0,11.32,0l40-40a8,8,0,0,0-11.32-11.32L136,124.69V32a8,8,0,0,0-16,0v92.69L93.66,98.34a8,8,0,0,0-11.32,11.32Z"
+                ></path>
+              </svg>
+              Resume
+            </a>
+          </div>
+        </nav>
+
+        <!-- Mobile Toggle -->
+        <button
+          class="menu-toggle"
+          id="menu-toggle"
+          aria-label="Toggle navigation"
+          aria-controls="nav"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section id="hero" class="hero sections">
+        <div class="hero-content">
+          <h2 class="section-title">Hello!</h2>
+          <h1 class="hero-title">
+            <span>I'm</span> <span>Kevin von Dumke</span>
+          </h1>
+          <h2 class="hero-subtitle">Full Stack Developer</h2>
+          <p class="hero-tagline">
+            I build exceptional digital experiences that are fast, accessible,
+            and visually appealing.
+          </p>
+          <div class="hero-links">
+            <a href="#projects" class="btn primary">View My Work</a>
+            <a
+              href="https://github.com/kevinvondumke"
+              target="_blank"
+              class="btn secondary"
+              >Visit My GitHub</a
+            >
+          </div>
+        </div>
+      </section>
+      <section id="about" class="about sections">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-grid">
+          <div class="about-content">
+            <p class="about-description">
+              I'm Kevin, a full stack developer who builds clean, scalable, and
+              experience driven digital products. I care about architecture,
+              clarity, and the kind of UI that feels fast, intentional, and
+              effortless.
+            </p>
+            <p class="about-description">
+              My work blends frontend precision with backend reliability. I
+              design modular systems, reusable components, and event driven
+              interfaces that scale without becoming messy.
+            </p>
+            <p class="about-description">
+              I enjoy solving complex problems, turning ideas into real
+              products, and creating experiences that feel smooth and intuitive.
+              Coding is not just what I do — it's how I think. I approach every
+              project with a mix of engineering discipline, UX awareness, and a
+              personal sense of style.
+            </p>
+            <p class="about-description">
+              Outside of code, I'm always leveling up — in life, in tech, and in
+              the things I create.
+            </p>
+          </div>
+          <div class="about-image">
+            <img
+              src="assets/images/kevin.png"
+              alt="Kevin Von Dumke"
+              class="about-image"
+            />
+          </div>
+        </div>
+      </section>
+      <section id="skills" class="skills sections">
+        <h2 class="section-title">Tech Skills</h2>
+        <div class="skills-grid">
+          <div class="skill-category">
+            <h3 class="skill-title">Frontend Development</h3>
+            <p class="skill-description">
+              I build fast, modular, and intuitive interfaces using modern
+              frameworks. My focus is on clean component architecture, smooth
+              interactions, and UX driven design.
+            </p>
+            <ul class="skill-list">
+              <li>React</li>
+              <li>Vue</li>
+              <li>Angular</li>
+              <li>JavaScript / TypeScript</li>
+              <li>Responsive UI / CSS Architecture</li>
+            </ul>
+          </div>
+
+          <div class="skill-category">
+            <h3 class="skill-title">Backend Development</h3>
+            <p class="skill-description">
+              I design reliable backend systems with clear structure, strong
+              data modeling, and scalable logic. I enjoy building APIs that feel
+              clean, predictable, and easy to integrate.
+            </p>
+            <ul class="skill-list">
+              <li>Node.js</li>
+              <li>Express</li>
+              <li>Prisma ORM</li>
+              <li>PostgreSQL</li>
+              <li>REST API Architecture</li>
+            </ul>
+          </div>
+
+          <div class="skill-category">
+            <h3 class="skill-title">System Architecture</h3>
+            <p class="skill-description">
+              I think in systems. Modular flows, reusable logic, event driven
+              UI, and scalable structures that stay clean as they grow. I build
+              with clarity and long term maintainability in mind.
+            </p>
+            <ul class="skill-list">
+              <li>Component based Architecture</li>
+              <li>Design Systems</li>
+              <li>State Management</li>
+              <li>Authentication & Permissions</li>
+              <li>Scalable Project Structure</li>
+            </ul>
+          </div>
+
+          <div class="skill-category">
+            <h3 class="skill-title">Product & UX</h3>
+            <p class="skill-description">
+              I design experiences that feel intentional — strong hierarchy,
+              smooth flows, and interfaces that guide users naturally. I blend
+              engineering with design to create products that feel premium.
+            </p>
+            <ul class="skill-list">
+              <li>UI/UX Design</li>
+              <li>Wireframing & Prototyping</li>
+              <li>Figma</li>
+              <li>User Flow Design</li>
+              <li>Interaction Design</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section id="projects" class="projects sections">
+        <h2 class="section-title">Projects</h2>
+
+        <div class="projects-grid">
+          <!-- PROJECT 1: NETLINK (FEATURED VUE) -->
+          <div class="project-card large">
+            <div class="project-image project-netlink">
+              <img src="assets/projects/netlink-logo.png" alt="Netlink Logo" />
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Netlink — Social Platform</h3>
+              <p class="project-description">
+                Full-stack social platform featuring real-time messaging, post
+                feeds, granular user privacy, and moderation safety controls.
+              </p>
+              <div class="project-tags netlink-tags">
+                <span>Vue</span><span>TypeScript</span><span>Node.js</span
+                ><span>Prisma</span><span>PostgreSQL</span>
+              </div>
+              <a class="project-link" href="./projects/netlink.html"
+                >View Case Study &rarr;</a
+              >
+            </div>
+          </div>
+
+          <!-- PROJECT 2: ORBISTORE (REACT) -->
+          <div class="project-card medium">
+            <div class="project-image medium-image project-orbistore">
+              <img
+                src="assets/projects/orbistore-logo.png"
+                alt="Orbistore Logo"
+              />
+            </div>
+            <div class="project-content">
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  justify-content: space-between;
+                  margin-bottom: 0.5rem;
+                "
+              >
+                <h3 class="project-title" style="margin: 0">
+                  Orbistore — Digital Commerce
+                </h3>
+                <span
+                  style="
+                    font-size: 0.75rem;
+                    background: var(--accent-glow);
+                    color: var(--color-primary);
+                    padding: 0.2rem 0.6rem;
+                    border-radius: var(--radius-full);
+                    font-weight: 600;
+                  "
+                  >In Development</span
+                >
+              </div>
+              <p class="project-description">
+                Modern E-Commerce application with dynamic cart state, checkout
+                flows, product catalog search, and payment processing.
+              </p>
+              <div class="project-tags orbistore-tags">
+                <span>React</span><span>TypeScript</span><span>Tailwind</span
+                ><span>Node.js</span>
+              </div>
+              <span
+                class="project-link"
+                style="color: var(--project-orbistore-color); cursor: default"
+                >Documentation & Architecture Coming Soon</span
+              >
+            </div>
+          </div>
+
+          <!-- PROJECT 3: MEDSOFT (ANGULAR) -->
+          <div class="project-card medium">
+            <div class="project-image medium-image project-medsoft">
+              <img src="assets/projects/medsoft-logo.png" alt="Medsoft Logo" />
+            </div>
+            <div class="project-content">
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  justify-content: space-between;
+                  margin-bottom: 0.5rem;
+                "
+              >
+                <h3 class="project-title" style="margin: 0">
+                  Medsoft — Health Management
+                </h3>
+                <span
+                  style="
+                    font-size: 0.75rem;
+                    background: var(--accent-glow);
+                    color: var(--color-primary);
+                    padding: 0.2rem 0.6rem;
+                    border-radius: var(--radius-full);
+                    font-weight: 600;
+                  "
+                  >Planned</span
+                >
+              </div>
+              <p class="project-description">
+                Clinical management dashboard for patient records, appointment
+                scheduling, and electronic health metrics visualization.
+              </p>
+              <div class="project-tags medsoft-tags">
+                <span>Angular</span><span>TypeScript</span><span>RxJS</span
+                ><span>REST API</span>
+              </div>
+              <span
+                class="project-link"
+                style="color: var(--project-medsoft-color); cursor: default"
+                >System Planning & Wireframes</span
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <section id="contact" class="contact sections">
+        <h2 class="section-title">Let's Connect</h2>
+        <div class="availability-status">
+          <span class="status-dot"></span>
+          <span class="status-text">Currently open to meaningful projects</span>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-info">
+            <p class="contact-text">
+              If you want to talk about a project, collaborate, or just say hi,
+              feel free to reach out. I'm always open to building something
+              great.
+            </p>
+          </div>
+          <div class="contact-methods">
+            <a href="mailto:kevinvondumke@gmail.com" class="contact-item" aria-label="Send Email">
+              <span class="contact-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="32"
+                  height="32"
+                  fill="#FFFFFF"
+                  viewBox="0 0 256 256"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path
+                    d="M128,24a104,104,0,0,0,0,208c21.51,0,44.1-6.48,60.43-17.33a8,8,0,0,0-8.86-13.33C166,210.38,146.21,216,128,216a88,88,0,1,1,88-88c0,26.45-10.88,32-20,32s-20-5.55-20-32V88a8,8,0,0,0-16,0v4.26a48,48,0,1,0,5.93,65.1c6,12,16.35,18.64,30.07,18.64,22.54,0,36-17.94,36-48A104.11,104.11,0,0,0,128,24Zm0,136a32,32,0,1,1,32-32A32,32,0,0,1,128,160Z"
+                  ></path>
+                </svg>
+              </span>
+              <span>Email</span>
+            </a>
+            <a
+              href="https://github.com/kevinvondumke"
+              target="_blank"
+              class="contact-item"
+              aria-label="Visit GitHub Profile"
+            >
+              <span class="contact-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="32"
+                  height="32"
+                  fill="#FFFFFF"
+                  viewBox="0 0 256 256"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path
+                    d="M208.31,75.68A59.78,59.78,0,0,0,202.93,28,8,8,0,0,0,196,24a59.75,59.75,0,0,0-48,24H124A59.75,59.75,0,0,0,76,24a8,8,0,0,0-6.93,4,59.78,59.78,0,0,0-5.38,47.68A58.14,58.14,0,0,0,56,104v8a56.06,56.06,0,0,0,48.44,55.47A39.8,39.8,0,0,0,96,192v8H72a24,24,0,0,1-24-24A40,40,0,0,0,8,136a8,8,0,0,0,0,16,24,24,0,0,1,24,24,40,40,0,0,0,40,40H96v16a8,8,0,0,0,16,0V192a24,24,0,0,1,48,0v40a8,8,0,0,0,16,0V192a39.8,39.8,0,0,0-8.44-24.53A56.06,56.06,0,0,0,216,112v-8A58.14,58.14,0,0,0,208.31,75.68ZM200,112a40,40,0,0,1-40,40H112a40,40,0,0,1-40-40v-8a41.74,41.74,0,0,1,6.9-22.48A8,8,0,0,0,80,73.83a43.81,43.81,0,0,1,.79-33.58,43.88,43.88,0,0,1,32.32,20.06A8,8,0,0,0,119.82,64h32.35a8,8,0,0,0,6.74-3.69,43.87,43.87,0,0,1,32.32-20.06A43.81,43.81,0,0,1,192,73.83a8.09,8.09,0,0,0,1,7.65A41.72,41.72,0,0,1,200,104Z"
+                  ></path>
+                </svg>
+              </span>
+              <span>GitHub</span>
+            </a>
+            <a
+              href="https://linkedin.com/in/kevinvondumke"
+              target="_blank"
+              class="contact-item"
+              aria-label="Visit LinkedIn Profile"
+            >
+              <span class="contact-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="32"
+                  height="32"
+                  fill="#FFFFFF"
+                  viewBox="0 0 256 256"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path
+                    d="M216,24H40A16,16,0,0,0,24,40V216a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V40A16,16,0,0,0,216,24Zm0,192H40V40H216V216ZM96,112v64a8,8,0,0,1-16,0V112a8,8,0,0,1,16,0Zm88,28v36a8,8,0,0,1-16,0V140a20,20,0,0,0-40,0v36a8,8,0,0,1-16,0V112a8,8,0,0,1,15.79-1.78A36,36,0,0,1,184,140ZM100,84A12,12,0,1,1,88,72,12,12,0,0,1,100,84Z"
+                  ></path>
+                </svg>
+              </span>
+              <span>LinkedIn</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </footer>
+    <script src="./js/app.js"></script>
+    <script src="./js/theme.js"></script>
+  </body>
 </html>

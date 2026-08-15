@@ -255,7 +255,7 @@ button:focus-visible,
 }
 @media (max-width: 600px) {
   .index-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -805,6 +805,9 @@ button:focus-visible,
 }
 
 @media (max-width: 768px) {
+  .app-screen {
+    height: 45vh;
+  }
   .project-hero {
     margin-top: 4.5rem;
     padding: 1.5rem 1rem 2.5rem;
@@ -818,16 +821,16 @@ button:focus-visible,
     padding: 2rem 1rem;
   }
   .project-meta {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
     padding: 1rem;
   }
   .about-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
   .gallery-grid {
     grid-template-columns: 1fr;
   }  
   .links-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
 }

@@ -933,7 +933,7 @@ button:focus-visible,
     font-size: var(--fs-md);
   }
   .hero-links {
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     gap: 12px;
     width: 100%;
@@ -948,7 +948,7 @@ button:focus-visible,
     gap: 1.5rem;
   }
   .about-description {
-    text-align: left;
+    text-align: justify;
     font-size: var(--fs-md);
     padding: var(--space-2) 0;
     line-height: var(--lh-body);
@@ -982,7 +982,7 @@ button:focus-visible,
     gap: 1rem;
   }
   .contact-methods {
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     gap: 0.8rem;
     width: 100%;

@@ -948,7 +948,7 @@ button:focus-visible,
     gap: 1.5rem;
   }
   .about-description {
-    text-align: justify;
+    text-align: left;
     font-size: var(--fs-md);
     padding: var(--space-2) 0;
     line-height: var(--lh-body);

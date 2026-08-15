@@ -806,11 +806,17 @@ button:focus-visible,
 
 @media (max-width: 768px) {
   .app-screen {
-    height: 45vh;
+    height: 40vh;
   }
   .project-hero {
     margin-top: 4.5rem;
     padding: 1.5rem 1rem 2.5rem;
+  }
+  .project-title {
+    font-size: var(--fs-2xl);
+  }
+  .project-subtitle {
+    font-size: var(--fs-lg);
   }
   .project-about,
   .system-section,
